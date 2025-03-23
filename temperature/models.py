@@ -11,7 +11,7 @@ class Temperature(Base):
 
     id: int = Column(Integer, primary_key=True, index=True)
     date_time: datetime = Column(DateTime, nullable=False, default=func.now())
-    temperature: int = Column(Float, nullable=False)
+    temperature: float = Column(Float, nullable=False)
     city_id: int = Column(
         Integer,
         ForeignKey("city.id", ondelete="CASCADE"),
